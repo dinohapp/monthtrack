@@ -1,7 +1,21 @@
 
-html
-  {background-color: #333;
-
+html{background-color: #777778;
   }
-  /*styles here*/
-  // styles are here
+div {border:1px solid black;
+padding:5px;}
+.thdr
+  {height: 20px;
+  }
+.hcol
+  {float: left;
+  }
+.row {
+  height: 20px;
+  width: 20px;
+  float:left;
+    }
+.activity_row{
+  float:left;
+}
+.chkbox{float:left;}
+.activity{float:left;}
