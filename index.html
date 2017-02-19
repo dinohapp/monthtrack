@@ -3,37 +3,69 @@
 <head>
   <meta charset = 'utf-8'>
   <meta name = 'viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' href='styles/style.css'></script>
+  <link rel='stylesheet' href='styles/style.css'>
+  <script src='scripts/script.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>-->
 </head>
 
-<body>
-  <!--dark or light theme selector will be here-->
+<!--dark or light theme selector will be here-->
 <div class='container'>
-  <h2>Did done</h2>
+<h2>Did done</h2>
 </div>
-  <table class='table'>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Activity</th>
-        <th>I should be repeated n times for number of days in a month</th>
-      </tr>
-    </thead>
+<table ng-app='' ng-init="names=['Jump','Rump','Stomp','Walk']" class='table'>
+  <thead>
     <tr>
-      <td>1</td>
-      <td>Jumping</td>
-      <td>done checkbox</td>
+      <!--the first row-->
+      <th>#</th>
+      <th>Activity</th>
+      <th ng-repeat="n in [].constructor(30) track by $index+1">{{$index+1}}</th>
     </tr>
-    <tr>
-      <td>2</td>
-      <td>Rolling</td>
-      <td>done checkbox</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Stomping</td>
-      <td>done checkbox</td>
-    </tr>
-    </table>
+  </thead>
+  <!--everything else-->
+  <tr ng-repeat="n in [].constructor(names.length) track by $index+1">
+    <td>{{$index+1}}</td>
+    <td>{{names[$index]}}</td>
+    <td ng-repeat="n in [].constructor(30) track by $index+1"><input type="checkbox"></td>
+  </tr>
+  <!--adding a new key to the names array will be here
+<div><input type="text" ng-model="namen">names.push({{namen}})<div>-->
+<!--  <tr>
+    <td>2</td>
+    <td>Rolling</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Stomping</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Jumping</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Jumping</td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+    <td><input type="checkbox"></td>
+  </tr>-->
+  </table>
   </body>
 </html>
